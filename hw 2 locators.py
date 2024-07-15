@@ -30,6 +30,7 @@ driver.find_element(By.XPATH,"//a[text()='Conditions of Use']")
 # 5.loactor for Privacy Notice link
 driver.find_element(By.XPATH,"//a[text()='Privacy Notice']")
 
+
 # 6. locator for Need help link
 driver.find_element(By.XPATH,"//span[@class='a-expander-prompt']")
 
