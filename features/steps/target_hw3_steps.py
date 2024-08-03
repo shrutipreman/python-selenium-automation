@@ -1,6 +1,8 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
 from time import sleep
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 @given('Open target main page')
 def open_target(context):
@@ -8,6 +10,8 @@ def open_target(context):
 
 @when('Click on Cart icon')
 def click_cart(context):
+    #ADD_TO_CART_BTN = (By.CSS_SELECTOR,".sc-ab4ee1d1-1.sc-e487bf3b-0.bYXfno.fRitwa" )
+    #context.driver.wait.until(EC.element_to_be_clickable(ADD_TO_CART_BTN)).click()
     context.driver.find_element(By.CSS_SELECTOR,".sc-ab4ee1d1-1.sc-e487bf3b-0.bYXfno.fRitwa" ).click()
     sleep(2)
 

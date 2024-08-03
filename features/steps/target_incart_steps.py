@@ -1,11 +1,14 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from behave import given, when, then
 from time import sleep
 
 @when('Add product to cart')
 def add_product_cart(context):
+    #context.driver.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR,"[id*='addToCartButton']"))).click()
     sleep(5)
     context.driver.find_element(By.CSS_SELECTOR,"[id*='addToCartButton']").click()
     sleep(5)
