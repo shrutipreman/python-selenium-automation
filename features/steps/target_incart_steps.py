@@ -7,15 +7,15 @@ from behave import given, when, then
 from time import sleep
 
 @when('Add product to cart')
-def add_product_cart(context):
-    #context.driver.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR,"[id*='addToCartButton']"))).click()
+def addproduct_cart(context):
     sleep(5)
-    context.driver.find_element(By.CSS_SELECTOR,"[id*='addToCartButton']").click()
+    context.app.search_results_page.add_product_cart()
+    #context.driver.find_element(By.CSS_SELECTOR, "[id*='addToCartButton']").click()
     sleep(5)
 @when('Add to cart from side navigation')
 def add_side_navg(context):
     sleep(5)
-    context.driver.find_element(By.CSS_SELECTOR,".sc-9306beff-0.sc-d6c67707-0.dfqbQr.cfcjLp").click()
+    context.driver.find_element(By.CSS_SELECTOR, "button.sc-9306beff-0.sc-acb41a74-0.dfqbQr.dbtwRO").click()
     sleep(3)
 
 @when('Open cart page')
