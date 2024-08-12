@@ -5,3 +5,6 @@ class MainPage(Page):
 
     def open(self):
         self.open_url('https://www.target.com/')
+
+    def cart_page(self):
+        self.open_url('https://www.target.com/cart')

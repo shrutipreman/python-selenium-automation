@@ -24,6 +24,7 @@ def verify_cart(context):
     #assert expected_result in actual_result, f'Expected text did not match'
     #print('Test case passed')
 
+
 @when('Click Sign In')
 def click_signin(context):
     context.app.header.click_signin()
@@ -34,6 +35,7 @@ def click_sidenav_signin(context):
     context.app.header.click_sidenav_signin()
     #context.driver.find_element(By.XPATH,"//span[text()='Sign in' and @class='sc-859e7637-0 hHZPQy']").click()
     sleep(2)
+
 @then('Verify Sign In form opened')
 def verify_signin_form(context):
     context.app.login_page.verify_signin_form()

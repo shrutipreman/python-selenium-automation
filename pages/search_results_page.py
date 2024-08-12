@@ -7,6 +7,7 @@ class SearchResultsPage(Page):
     SEARCH_RESULTS_TXT = (By.XPATH, "//h2[@data-test='resultsHeadingWithoutCount']")
    # ADD_TO_CART_BTN = (By.CSS_SELECTOR,"button[id*='addToCartButton']")
     ADD_TO_CART_BTN = (By.CSS_SELECTOR, "[id*='addToCartButton']")
+    SIDE_CART_BTN= (By.CSS_SELECTOR, "button.sc-9306beff-0.sc-acb41a74-0.dfqbQr.dbtwRO")
 
     def verify_text(self):
         actual_text = self.driver.find_element(*self.SEARCH_RESULTS_TXT).text
@@ -18,4 +19,8 @@ class SearchResultsPage(Page):
         assert 'chocolate' in url, f'Expected "chocolate" not in {url}'
 
     def add_product_cart(self):
-        self.wait_and_click(*self.ADD_TO_CART_BTN)
+        self.driver.execute_script("window.scrollBy(0, 500)")
+        sleep(3)
+        self.click(*self.ADD_TO_CART_BTN)
+    def add_side_nav(self):
+        self.click(*self.SIDE_CART_BTN)
