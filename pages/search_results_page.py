@@ -3,6 +3,7 @@ from time import sleep
 from pages.base_page import Page
 
 
+
 class SearchResultsPage(Page):
     SEARCH_RESULTS_TXT = (By.XPATH, "//h2[@data-test='resultsHeadingWithoutCount']")
    # ADD_TO_CART_BTN = (By.CSS_SELECTOR,"button[id*='addToCartButton']")
@@ -20,7 +21,8 @@ class SearchResultsPage(Page):
 
     def add_product_cart(self):
         self.driver.execute_script("window.scrollBy(0, 500)")
-        sleep(3)
-        self.click(*self.ADD_TO_CART_BTN)
+        #sleep(3)
+        self.wait_and_click(*self.ADD_TO_CART_BTN)
     def add_side_nav(self):
-        self.click(*self.SIDE_CART_BTN)
+        self.wait_and_click(*self.SIDE_CART_BTN)
+        #sleep(3)
